@@ -3,11 +3,141 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 body {
-  background: $wtf;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  font-family: "Kumbh Sans";
+}
+
+.container {
+  width: 921px;
+  height: 510px;
+  background: #fefefe;
+  border-radius: 20px;
+  display: flex;
+  z-index: 900;
+  &__faq {
+    width: 350px;
+    color: hsl(238, 29%, 16%);
+    align-self: center;
+    margin-left: 30px;
+    min-height: 400px;
+    margin-top: 50px;
+  }
+  &__illustration {
+    width: 50%;
+    overflow: hidden;
+  }
+  &__title {
+    color: hsl(238, 29%, 16%);
+  }
+  &__question {
+    font-size: 14px;
+    width: 320px;
+    text-align: left;
+  }
+  &__svg {
+    position: relative;
+    width: 472px;
+    height: 359px;
+    left: -81px;
+    top: 70px;
+  }
+  &__div {
+    padding: 3px 0;
+    border-bottom: 0.5px solid hsl(240, 5%, 91%);
+  }
+  &__button {
+    display: flex;
+  width: 340px;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  align-items: center;
+  }
+  &__answer {
+    color: hsl(237, 12%, 33%);
+    font-size: 12px;
+    margin: 0;
+    padding-bottom: 15px;
+    display: none;
+  }
+  &__illustrationMobile {
+    display: none;
+    position: absolute;
+    top: 23px;
+  }
+}
+
+.box {
+  position: absolute;
+  left: 169px;
+  top: 334px;
+  z-index: 905;
+}
+
+.answer--active {
+  display: block;
+}
+
+.background {
+  position: relative;
+    &__image{
+      position: absolute;
+      top: -291px;
+      left: -575px;
+    }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 500px){
+  .container {
+    width: 330px;
+    &__illustration {
+      display: none;
+    }
+    &__faq {
+      margin: 0;
+      padding: 0 25px;
+      margin-top: 90px;
+    }
+    &__button {
+      width: 280px;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__question {
+      width: 300px;
+    }
+    &__answer {
+      padding-right: 25px;
+    }
+  }
+  .mobile {
+    &__illustration {
+      display: flex;
+      position: absolute;
+    top: 23px;
+    left: 40px;
+    }
+    &__background {
+      position: absolute;
+    left: 68px;
+    }
+  }
 }
